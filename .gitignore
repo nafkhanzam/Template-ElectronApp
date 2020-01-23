@@ -1,3 +1,4 @@
-public/bundle/
+public/build/
+bin/
 node_modules/
 *.lock

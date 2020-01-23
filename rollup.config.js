@@ -7,7 +7,7 @@ import { terser } from "rollup-plugin-terser";
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-    input: "src/main.js",
+    input: "client/main.js",
     output: {
         sourcemap: false,
         format: "iife",
@@ -20,7 +20,7 @@ export default {
             dev: !production,
             // we'll extract any component CSS out into
             // a separate file — better for performance
-            css: css => {
+            css: (css) => {
                 css.write("public/build/bundle.css");
             },
         }),
@@ -32,7 +32,7 @@ export default {
         // https://github.com/rollup/plugins/tree/master/packages/commonjs
         resolve({
             browser: true,
-            dedupe: importee =>
+            dedupe: (importee) =>
                 importee === "svelte" || importee.startsWith("svelte/"),
         }),
         commonjs(),

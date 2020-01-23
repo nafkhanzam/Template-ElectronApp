@@ -1,0 +1,34 @@
+{
+    "name": "new-electron-app",
+    "version": "0.0.1",
+    "description": "A new electron app",
+    "main": "bin/index.js",
+    "author": "nafkhanzam <nafkhanalzamzami@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build": "yarn build:server && yarn build:client",
+        "build:server": "rm -r bin && tsc",
+        "build:client": "rollup -c",
+        "dev:server": "nodemon",
+        "dev:client": "rollup -c -w",
+        "start": "yarn build && yarn electron",
+        "electron": "/mnt/c/Users/nafkhanzam/AppData/Local/Yarn/bin/electron ."
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^11.0.1",
+        "@rollup/plugin-node-resolve": "^6.0.0",
+        "@types/electron": "^1.6.10",
+        "@types/node": "^12",
+        "rollup": "^1.12.0",
+        "rollup-plugin-livereload": "^1.0.0",
+        "rollup-plugin-svelte": "^5.0.3",
+        "rollup-plugin-terser": "^5.1.2",
+        "svelte": "^3.0.0"
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "electron-better-ipc": "^0.8.0",
+        "svelte-spa-router": "^2.0.0"
+    }
+}

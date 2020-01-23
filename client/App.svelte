@@ -5,7 +5,7 @@
 	import Router from 'svelte-spa-router'
 
 	export let name;
-	
+
 	let routes = {
 		'/': Home,
 		// Exact path
