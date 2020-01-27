@@ -8,12 +8,11 @@
     "private": true,
     "scripts": {
         "build": "yarn build:server && yarn build:client",
-        "build:server": "rm -r bin && tsc",
+        "build:server": "rm -rf bin && tsc",
         "build:client": "rollup -c",
-        "dev:server": "nodemon",
-        "dev:client": "rollup -c -w",
-        "start": "yarn build && yarn electron",
-        "electron": "/mnt/c/Users/nafkhanzam/AppData/Local/Yarn/bin/electron ."
+        "dev": "yarn build && yarn electron",
+        "test": "yarn build && yarn electron",
+        "electron": "export NODE_ENV=development && /mnt/c/Users/nafkhanzam/AppData/Local/Yarn/bin/electron ."
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^11.0.1",
